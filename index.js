@@ -4,13 +4,9 @@ const items = [
     { id: 3, name: "bazz", price: 10},
     { id: 4, name: "quq", price: 12},
 ];
+// შეიყვანე, რომელი key გინდა: id, name, price
+const keyFormating = prompt("choose Key, ID, Name or price", "Enter ");
 
-const search = prompt("Enter the string", "we ll check if there is the this string");
-// თუ items აქვს name იგივე ინდექსით (იგივე ასოების თანმიმდევრობა) რაც seatch ს       და ის არ მოიპოვება ამ ერეიში (-1ანუ არ არის.)
-let found = items.filter(itm => itm.name.indexOf(search) !== -1); //ანუ რასაც ჩაწერ, ის თუ არის ამოპრინტეო;
-console.log(found);
-
-
-
-
-
+//map შექმნის ახალ ერეის და ამოაგდებს, key - ის შესაბამის valueებს. 
+const mappedValues = items.map(itm => itm[keyFormating]);
+console.log(mappedValues);
