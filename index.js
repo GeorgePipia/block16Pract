@@ -4,9 +4,12 @@ const items = [
     { id: 3, name: "bazz", price: 10},
     { id: 4, name: "quq", price: 12},
 ];
-// შეიყვანე, რომელი key გინდა: id, name, price
-const keyFormating = prompt("choose Key, ID, Name or price", "Enter ");
 
-//map შექმნის ახალ ერეის და ამოაგდებს, key - ის შესაბამის valueებს. 
-const mappedValues = items.map(itm => itm[keyFormating]);
-console.log(mappedValues);
+
+const keyForReducing = prompt('choose a key, either id, or price so we we can use reduce to sum up the values for that key', 'price');
+
+const reduction = items.reduce((acc, item)=> {
+  acc = acc + item[keyForReducing];
+  return acc;
+}, 0); 
+console.log(reduction);
