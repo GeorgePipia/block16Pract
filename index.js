@@ -5,23 +5,12 @@ const items = [
     { id: 4, name: "quq", price: 12},
 ];
 
-const welcome = prompt("Enter an item name", "Enter string here");
+const search = prompt("Enter the string", "we ll check if there is the this string");
+// თუ items აქვს name იგივე ინდექსით (იგივე ასოების თანმიმდევრობა) რაც seatch ს       და ის არ მოიპოვება ამ ერეიში (-1ანუ არ არის.)
+let found = items.filter(itm => itm.name.indexOf(search) !== -1); //ანუ რასაც ჩაწერ, ის თუ არის ამოპრინტეო;
+console.log(found);
 
-//ერეი itemზე ვიყენებთ array method -finds
-//რომელშიც არგუმენტად ვუშვებთ callback მეთოდს - ანუ მთლიანად ეგ ექსფრეშენი არის ქალლბაცკ ფუნქციას
-const found = items.find(elementebi => elementebi.name === welcome);
-//ეს callback მეთოდი იღებს ერთ არგუმენტს (ELEMENTEBI) და აბრუნებს ბულიონს 
-// ქოლბექის აზრი აქ იმაშია, რომ for loop ის ნაცვლად, ის დააბრუნებს ინფორმაციას, როცა სახელი და შეყვანილი ინფო დაემთხვევა
 
-// ასე მეორენაირად const found = items.find((elementebi) => {return elementebi.name === welcome});
-/* ასეა ვრცლად
-const found = items.find(function(elementebi) {
-    return elementebi.name === welcome;
-  }); */
-  
-if (found){
-    console.log("found");
-    console.log(found);  //ეს იმისთვის, რომ თვითონ id და სხვა მონაცემი ამოპრინტოს
-} else {console.log(`not found ${welcome}`)};
+
 
 
